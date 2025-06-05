@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
+    <sc_cat_item_catalog action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Edit and Resubmit">1d57c73747bde61028da392f316d4391</sc_cat_item>
+        <sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+        <sys_class_name>sc_cat_item_catalog</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-05 02:50:29</sys_created_on>
+        <sys_id>82e7077747bde61028da392f316d430e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Catalog.Edit and Resubmit</sys_name>
+        <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
+        <sys_update_name>sc_cat_item_catalog_82e7077747bde61028da392f316d430e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-05 02:50:29</sys_updated_on>
+    </sc_cat_item_catalog>
+</record_update>
