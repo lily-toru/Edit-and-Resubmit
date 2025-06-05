@@ -38,18 +38,18 @@
         <lookup_value/>
         <macro/>
         <macroponent/>
-        <mandatory>false</mandatory>
+        <mandatory>true</mandatory>
         <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
         <mask_use_encryption>false</mask_use_encryption>
-        <name>comment</name>
+        <name>start_date</name>
         <not_available_conversation>false</not_available_conversation>
-        <order>700</order>
+        <order>300</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text>Comment</question_text>
+        <question_text>Start Date</question_text>
         <read_only>false</read_only>
         <read_roles/>
         <read_script/>
@@ -77,20 +77,20 @@
         <summary_macro/>
         <sys_class_name>item_option_new</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-06-05 02:59:02</sys_created_on>
-        <sys_id>b7998bf747bde61028da392f316d4396</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>Comment</sys_name>
+        <sys_created_on>2025-06-05 03:08:31</sys_created_on>
+        <sys_id>32fb8bfb47bde61028da392f316d4393</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Start Date</sys_name>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
-        <sys_update_name>item_option_new_b7998bf747bde61028da392f316d4396</sys_update_name>
+        <sys_update_name>item_option_new_32fb8bfb47bde61028da392f316d4393</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-05 03:10:30</sys_updated_on>
+        <sys_updated_on>2025-06-05 03:10:31</sys_updated_on>
         <table/>
         <tooltip/>
         <topic_block/>
-        <type>6</type>
+        <type>9</type>
         <ui_page/>
         <unique>false</unique>
         <use_dynamic_default>false</use_dynamic_default>
@@ -106,22 +106,22 @@
         <visible_summary>true</visible_summary>
         <write_roles/>
     </item_option_new>
-    <sys_translated_text action="delete_multiple" query="documentkey=b7998bf747bde61028da392f316d4396"/>
-    <fx_price action="delete_multiple" query="id=b7998bf747bde61028da392f316d4396"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=32fb8bfb47bde61028da392f316d4393"/>
+    <fx_price action="delete_multiple" query="id=32fb8bfb47bde61028da392f316d4393"/>
     <fx_price action="INSERT_OR_UPDATE">
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>price_if_checked</field>
-        <id>b7998bf747bde61028da392f316d4396</id>
+        <id>32fb8bfb47bde61028da392f316d4393</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-06-05 02:59:02</sys_created_on>
-        <sys_id>1bd9433b47bde61028da392f316d4380</sys_id>
+        <sys_created_on>2025-06-05 03:08:31</sys_created_on>
+        <sys_id>c20ccbfb47bde61028da392f316d43d7</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-05 02:59:02</sys_updated_on>
+        <sys_updated_on>2025-06-05 03:08:31</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
@@ -129,16 +129,16 @@
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>rec_price_if_checked</field>
-        <id>b7998bf747bde61028da392f316d4396</id>
+        <id>32fb8bfb47bde61028da392f316d4393</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-06-05 02:59:02</sys_created_on>
-        <sys_id>dbd9433b47bde61028da392f316d437f</sys_id>
+        <sys_created_on>2025-06-05 03:08:31</sys_created_on>
+        <sys_id>860ccbfb47bde61028da392f316d43d6</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-05 02:59:02</sys_updated_on>
+        <sys_updated_on>2025-06-05 03:08:31</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
