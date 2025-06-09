@@ -14,7 +14,7 @@
         <description/>
         <display_price_property>non_zero</display_price_property>
         <entitlement_script/>
-        <flow_designer_flow display_value="Step based request fulfillment">21ea92dd53622010fca7ddeeff7b12b1</flow_designer_flow>
+        <flow_designer_flow display_value="Service Catalog item request">30f3d26187e92300e0ef0cf888cb0b91</flow_designer_flow>
         <fulfillment_automation_level>unspecified</fulfillment_automation_level>
         <group/>
         <hide_sp>false</hide_sp>
@@ -66,21 +66,21 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-06-05 02:50:29</sys_created_on>
         <sys_id>1d57c73747bde61028da392f316d4391</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name>Edit and Resubmit</sys_name>
         <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
         <sys_policy/>
         <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
         <sys_update_name>sc_cat_item_1d57c73747bde61028da392f316d4391</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-09 08:06:10</sys_updated_on>
+        <sys_updated_by>fabian.mcshaw</sys_updated_by>
+        <sys_updated_on>2025-06-09 08:11:01</sys_updated_on>
         <taxonomy_topic/>
         <template/>
         <template_manager_roles/>
         <type>item</type>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
-        <version>26</version>
+        <version>29</version>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
