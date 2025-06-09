@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="catalog_script_client">
+    <catalog_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_catalog>true</applies_catalog>
+        <applies_extended>false</applies_extended>
+        <applies_req_item>false</applies_req_item>
+        <applies_sc_task>false</applies_sc_task>
+        <applies_target_record>false</applies_target_record>
+        <applies_to>item</applies_to>
+        <cat_item display_value="Edit and Resubmit">1d57c73747bde61028da392f316d4391</cat_item>
+        <cat_variable/>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>reSubmit</name>
+        <order/>
+        <published_ref/>
+        <script><![CDATA[function onLoad() {
+   //Type appropriate comment here, and begin script below
+   var urlParams = new URLSearchParams(top.window.location.search);
+    var sysId = urlParams.get('sys_id');
+    var businessApplication = urlParams.get('business_application');
+    var requestFor = urlParams.get('request_for');
+
+    g_form.setValue('business_application', businessApplication);
+    g_form.setValue('request_for', requestFor);
+
+    var ga = new GlideAjax('ReqItemDataFetcher');
+    ga.addParam('sysparm_name', 'getdata'); 
+    ga.addParam('sysparm_business_application', businessApplication);
+    ga.addParam('sysparm_request_for', requestFor);
+    ga.getXMLAnswer(parseResponse);
+
+    function parseResponse(answer) {
+        // alert('parseResponse'+answer); 
+        g_form.setValue('comments', answer);
+    }
+}]]></script>
+        <sys_class_name>catalog_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-09 06:00:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>05f814154702ee1028da392f316d4377</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>reSubmit</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
+        <sys_update_name>catalog_script_client_05f814154702ee1028da392f316d4377</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-09 06:22:02</sys_updated_on>
+        <table/>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <va_supported>false</va_supported>
+        <variable_set/>
+        <view/>
+    </catalog_script_client>
+</record_update>
