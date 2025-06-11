@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="DELETE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description>Employee</description>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_1755799_edit_and.Allan Schwantd</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>Allan Schwantd</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-09 02:53:54</sys_created_on>
+        <sys_id>f20f6b49470eae1028da392f316d43d7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1755799_edit_and.Allan Schwantd</sys_name>
+        <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
+        <sys_update_name>sys_user_role_f20f6b49470eae1028da392f316d43d7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-09 02:53:54</sys_updated_on>
+    </sys_user_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</application>
+        <file_path/>
+        <instance_id>6ee249eeff956e10c80bf8e4fc4fd9c7</instance_id>
+        <instance_name>dev346879</instance_name>
+        <name>sys_user_role_f20f6b49470eae1028da392f316d43d7</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description>Employee</description><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>x_1755799_edit_and.Allan Schwantd</name><scoped_admin>false</scoped_admin><suffix>Allan Schwantd</suffix><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-06-09 02:53:54</sys_created_on><sys_id>f20f6b49470eae1028da392f316d43d7</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1755799_edit_and.Allan Schwantd</sys_name><sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package><sys_policy/><sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope><sys_update_name>sys_user_role_f20f6b49470eae1028da392f316d43d7</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-06-09 02:53:54</sys_updated_on></sys_user_role></record_update>]]></payload>
+        <payload_hash>-600999209</payload_hash>
+        <record_name>x_1755799_edit_and.Allan Schwantd</record_name>
+        <reverted_from/>
+        <source>a9370bf3477de61028da392f316d437b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-09 02:53:54</sys_created_on>
+        <sys_id>830fab49470eae1028da392f316d4335</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197529bd7080000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-09 02:53:54</sys_updated_on>
+        <type>Role</type>
+        <update_guid>870fab490f0eae10028e72d3ea48c734</update_guid>
+        <update_guid_history>870fab490f0eae10028e72d3ea48c734:-600999209</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_1755799_edit_and.Allan Schwantd">5c507f89470eae1028da392f316d43b0</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-09 02:59:28</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role">sys_user_role</sys_db_object>
+        <sys_id>31c8701ae65a4f4b993ba66a277724e1</sys_id>
+        <sys_metadata>f20f6b49470eae1028da392f316d43d7</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1755799_edit_and.Allan Schwantd</sys_name>
+        <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
+        <sys_scope_delete display_value="">1f498e1b31004a4bb610b897f4304a51</sys_scope_delete>
+        <sys_update_name>sys_user_role_f20f6b49470eae1028da392f316d43d7</sys_update_name>
+        <sys_update_version display_value="sys_user_role_f20f6b49470eae1028da392f316d43d7">830fab49470eae1028da392f316d4335</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-09 02:59:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

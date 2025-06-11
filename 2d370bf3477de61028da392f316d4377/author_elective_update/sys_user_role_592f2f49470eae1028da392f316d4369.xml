@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="DELETE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description>Manager</description>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_1755799_edit_and.Fabian Mcshaw</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>Fabian Mcshaw</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-09 02:54:20</sys_created_on>
+        <sys_id>592f2f49470eae1028da392f316d4369</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1755799_edit_and.Fabian Mcshaw</sys_name>
+        <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
+        <sys_update_name>sys_user_role_592f2f49470eae1028da392f316d4369</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-09 02:54:20</sys_updated_on>
+    </sys_user_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</application>
+        <file_path/>
+        <instance_id>6ee249eeff956e10c80bf8e4fc4fd9c7</instance_id>
+        <instance_name>dev346879</instance_name>
+        <name>sys_user_role_592f2f49470eae1028da392f316d4369</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description>Manager</description><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>x_1755799_edit_and.Fabian Mcshaw</name><scoped_admin>false</scoped_admin><suffix>Fabian Mcshaw</suffix><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-06-09 02:54:20</sys_created_on><sys_id>592f2f49470eae1028da392f316d4369</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1755799_edit_and.Fabian Mcshaw</sys_name><sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package><sys_policy/><sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope><sys_update_name>sys_user_role_592f2f49470eae1028da392f316d4369</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-06-09 02:54:20</sys_updated_on></sys_user_role></record_update>]]></payload>
+        <payload_hash>1867783108</payload_hash>
+        <record_name>x_1755799_edit_and.Fabian Mcshaw</record_name>
+        <reverted_from/>
+        <source>a9370bf3477de61028da392f316d437b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-09 02:54:20</sys_created_on>
+        <sys_id>d12f2f49470eae1028da392f316d43f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197529c3d960000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-09 02:54:20</sys_updated_on>
+        <type>Role</type>
+        <update_guid>d52f2f49710eae101ac5611904e5e6f5</update_guid>
+        <update_guid_history>d52f2f49710eae101ac5611904e5e6f5:1867783108</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_1755799_edit_and.Fabian Mcshaw">17507bc9470eae1028da392f316d43da</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-09 02:59:40</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role">sys_user_role</sys_db_object>
+        <sys_id>42f207d628654f90bda5789a11a34c40</sys_id>
+        <sys_metadata>592f2f49470eae1028da392f316d4369</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1755799_edit_and.Fabian Mcshaw</sys_name>
+        <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
+        <sys_scope_delete display_value="">1f498e1b31004a4bb610b897f4304a51</sys_scope_delete>
+        <sys_update_name>sys_user_role_592f2f49470eae1028da392f316d4369</sys_update_name>
+        <sys_update_version display_value="sys_user_role_592f2f49470eae1028da392f316d4369">d12f2f49470eae1028da392f316d43f6</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-09 02:59:40</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

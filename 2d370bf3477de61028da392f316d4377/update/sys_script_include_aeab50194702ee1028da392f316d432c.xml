@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1755799_edit_and.ReqItemDataFetcher</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>ReqItemDataFetcher</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var ReqItemDataFetcher = Class.create();
+ReqItemDataFetcher.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    getdata: function() { 
+        var gr = new GlideRecord("x_1755799_edit_and");
+        gr.addQuery("business_application", this.getParameter("sysparm_business_application"));
+        gr.addQuery("request_for", this.getParameter("sysparm_request_for"));
+        if (gr.next()) {
+            return gr.comments;
+        }
+    },
+    type: 'ReqItemDataFetcher'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-09 06:15:17</sys_created_on>
+        <sys_id>aeab50194702ee1028da392f316d432c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>ReqItemDataFetcher</sys_name>
+        <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
+        <sys_update_name>sys_script_include_aeab50194702ee1028da392f316d432c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-09 06:22:06</sys_updated_on>
+    </sys_script_include>
+</record_update>
