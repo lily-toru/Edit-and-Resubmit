@@ -12,50 +12,43 @@
         <script><![CDATA[var UpdateRequestItem = Class.create();
 
 UpdateRequestItem.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
-    /**
-     * Updates request item data with provided question answers
-     * 使用提供的问题答案更新请求项数据
-     * @return {string} "true" if successful / 成功返回"true"
-     */
     updateRequestItemData: function() {
-        // Get request number
-        // 获取请求编号
-        var requestNumber = this.getParameter("req_num");
-        if(!requestNumber) {
-            return "false"; // 添加：缺少必要参数时的返回
-        }
+        try {
+            var requestNumber = this.getParameter("sysparm_number");
 
-        // Retrieve the request item record
-        // 检索请求项记录
-        var requestItem = new GlideRecord("sc_req_item");
-        requestItem.addQuery("number", requestNumber);
-        requestItem.query();
-      
-        if(requestItem.next()) {        
-            // Define all fields to process
-            // 定义所有要处理的问题字段
-            var questionFields = ["business_application", "request_for", "comment"];
+            if (!requestNumber) return;
+               
+			var formDataString = this.getParameter("sysparm_formData");
+			gs.info("Received formData: " + formDataString);
+			var formDataObj = JSON.parse(formDataString);
+			
+            alert("[Server] Processing request: " + requestNumber); // Debug
+            var requestItem = new GlideRecord("sc_req_item");
+            requestItem.addQuery("number", requestNumber);
+            requestItem.query();
             
-            // Update all fields in a loop
-            // 循环更新所有问题字段
-            for (var i = 0; i < questionFields.length; i++) {
-                var field = questionFields[i];
-                var value = this.getParameter(field);
-                if(value !== null) {
-                    requestItem.variables[field] = value;
+            if (requestItem.next()) {
+                alert("[Server] Found request item record"); // Debug
+                requestItem.state = -192;
+                // 定义要更新的字段
+                var questionFields = ["business_application", "request_for", "comment"];
+                var fieldCount = questionFields.length;
+                
+                // 使用 for 循环替代 forEach
+                for (var i = 0; i < fieldCount; i++) {
+                    var field = questionFields[i];
+                    var value = formDataObj[field];
+                    alert("[Server] Processing field: " + field + " = " + value); // Debug                 
+                    if (value !== null) {
+                        requestItem.variables[field] = value;
+                    }
                 }
+			requestItem.update();
+			return "success";              
             }
-            
-            // Update standard fields
-            // 更新标准字段
-            requestItem.approval = "requested";
-            requestItem.state = -192; // Assuming -192 is a valid state code / 假设-192是有效状态码
-            
-            // Save changes to database
-            // 将更改保存到数据库
-            return requestItem.update() ? "true" : "false";
+        } catch (e) {
+            return e.message;
         }
-        return "false"; // 添加：记录未找到时的返回
     },
     type: 'UpdateRequestItem'
 });]]></script>
@@ -63,13 +56,13 @@ UpdateRequestItem.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-06-12 00:54:45</sys_created_on>
         <sys_id>5660b68e47cee25028da392f316d437f</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name>UpdateRequestItem</sys_name>
         <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
         <sys_update_name>sys_script_include_5660b68e47cee25028da392f316d437f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-12 01:26:53</sys_updated_on>
+        <sys_updated_on>2025-06-12 04:06:09</sys_updated_on>
     </sys_script_include>
 </record_update>
