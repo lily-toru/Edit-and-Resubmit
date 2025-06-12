@@ -18,45 +18,49 @@
         <name>loadRequestInfo</name>
         <order/>
         <published_ref/>
-        <script><![CDATA[function onLoad() { 
+        <script><![CDATA[function onLoad() {
     // Retrieve the request item number from URL parameters
     var requestNumber = getUrlParameter('req_num'); 
     if (!requestNumber) return;
 
     // Create a GlideAjax object to call the server-side script
     var ajax = new GlideAjax('RequestDataHandler'); 
-    // Set the name of the server-side method to be called
+	// Pass parameters
     ajax.addParam('sysparm_name', 'fetchRequestDetails'); 
-    // Pass the request item number parameter
     ajax.addParam('sysparm_number', requestNumber); 
-    // Send the request and process the response
+	// Send an asynchronous request and handle the response
     ajax.getXMLAnswer(processResponse); 
 }
 
 /**
- * Extract the value of a specified parameter from the URL
+ * URL parameter retrieval method
  */
 function getUrlParameter(paramName) { 
-    var currentUrl = top.location;
-    // Escape special characters in the parameter name for regex construction
-    paramName = paramName.replace(/[\[\]]/g, '\\$&'); 
-    // Construct a regular expression to match the parameter in the URL
-    var parameterRegex = new RegExp('[?&]' + paramName + '=([^&#]*)|&|$'); 
-    var matchResults = parameterRegex.exec(currentUrl);
-    // Decode and return the URL parameter value
-    return decodeURIComponent(matchResults[1].replace(/\+/g, '')); 
+	// Get URL object of top window
+    var url = top.location; 
+	// Escape special characters
+    paramName = paramName.replace(/[\[\]]/g, "\\$&"); 
+	// Construct regex pattern
+    var regex = new RegExp("[?&]" + paramName + "=([^&#]*)");
+	// Execute regex matching
+    var results = regex.exec(url);
+    if (!results || !results[1]) return '';
+	// Decode URI components
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
 /**
  * Process the Ajax response and populate form fields
  */
 function processResponse(response) { 
-    // Parse the JSON response into a JavaScript object
+	// Parse the JSON response data
     var parsedData = JSON.parse(response); 
+	// Iterate through each field in the response data
     if (parsedData) {
         for (var field in parsedData) {
-            // Set the data to the form field
-            g_form.setValue(field, parsedData[field]); 
+            if (g_form.hasField(field)) {
+                g_form.setValue(field, parsedData[field]); 
+            }
         }
     }
 }]]></script>
@@ -66,7 +70,7 @@ function processResponse(response) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>05f814154702ee1028da392f316d4377</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>55</sys_mod_count>
         <sys_name>loadRequestInfo</sys_name>
         <sys_overrides/>
         <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
@@ -74,7 +78,7 @@ function processResponse(response) {
         <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
         <sys_update_name>catalog_script_client_05f814154702ee1028da392f316d4377</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-11 07:49:53</sys_updated_on>
+        <sys_updated_on>2025-06-12 08:32:22</sys_updated_on>
         <table/>
         <type>onLoad</type>
         <ui_type>10</ui_type>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1755799_edit_and.SaveCatalogData</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>SaveCatalogData</name>
+        <sandbox_callable>true</sandbox_callable>
+        <script><![CDATA[var SaveCatalogData = Class.create();
+SaveCatalogData.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    saveData: function() {
+		// 获取请求参数
+        var reqItemId = this.getParameter("sysparm_number");
+        var businessApplicationuestion = this.getParameter("business_application");
+        var requestFor = this.getParameter("request_for");
+        var comment = this.getParameter("comment");
+        alert("comment: " + comment);
+        // 查询请求项记录
+        var reqItem = new GlideRecord("sc_req_item");
+        if (reqItem.get(reqItemId)) {
+            // 更新变量字段
+            reqItem.variables.business_application = businessApplicationuestion;
+            reqItem.variables.request_for = requestFor;
+            reqItem.variables.comment = comment;
+            
+            // 更新标准字段
+            reqItem.approval = "requested";
+            reqItem.state = -102; // 假设-102是有效的状态码
+            
+            // 保存更改
+            return reqItem.update() ? "true" : "false";
+        }
+        return "false"; // 记录未找到
+        // var fieldsValueString = this.getParameter('sysparm_fieldsValue');
+        // var number = this.getParameter('sysparm_number');
+        
+        // if (!fieldsValueString || !number) {
+        //     return 'Error: Missing required parameters';
+        // }
+
+        // var fieldsValue = JSON.parse(fieldsValueString);
+        // var gr = new GlideRecord('sc_req_item');
+        // gr.addQuery('number', number);
+        // gr.query();
+        
+        // if (gr.next()) {
+        //     gr.state = 2; // Working state
+            
+        //     for (var field in fieldsValue) {
+        //         if (fieldsValue.hasOwnProperty(field)) {
+        //             gr.variables[field] = fieldsValue[field];
+        //         }
+        //     }
+            
+        //     var updateResult = gr.update();
+        //     return updateResult ? 'success' : 'Error: Failed to update record';
+        // }
+        // return 'Error: Request item not found';
+    },
+    type: 'SaveCatalogData'
+});
+    ]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-11 18:16:37</sys_created_on>
+        <sys_id>4c551582470ae25028da392f316d43ea</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>SaveCatalogData</sys_name>
+        <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
+        <sys_update_name>sys_script_include_4c551582470ae25028da392f316d43ea</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-11 19:51:17</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</application>
+        <file_path/>
+        <instance_id>6ee249eeff956e10c80bf8e4fc4fd9c7</instance_id>
+        <instance_name>dev346879</instance_name>
+        <name>sys_script_include_4c551582470ae25028da392f316d43ea</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1755799_edit_and.SaveCatalogData&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;SaveCatalogData&lt;/name&gt;&lt;sandbox_callable&gt;true&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var SaveCatalogData = Class.create();
+SaveCatalogData.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    saveData: function() {
+		// 获取请求参数
+        var reqItemId = this.getParameter("sysparm_number");
+        var businessApplicationuestion = this.getParameter("business_application");
+        var requestFor = this.getParameter("request_for");
+        var comment = this.getParameter("comment");
+        alert("comment: " + comment);
+        // 查询请求项记录
+        var reqItem = new GlideRecord("sc_req_item");
+        if (reqItem.get(reqItemId)) {
+            // 更新变量字段
+            reqItem.variables.business_application = businessApplicationuestion;
+            reqItem.variables.request_for = requestFor;
+            reqItem.variables.comment = comment;
+            
+            // 更新标准字段
+            reqItem.approval = "requested";
+            reqItem.state = -102; // 假设-102是有效的状态码
+            
+            // 保存更改
+            return reqItem.update() ? "true" : "false";
+        }
+        return "false"; // 记录未找到
+        // var fieldsValueString = this.getParameter('sysparm_fieldsValue');
+        // var number = this.getParameter('sysparm_number');
+        
+        // if (!fieldsValueString || !number) {
+        //     return 'Error: Missing required parameters';
+        // }
+
+        // var fieldsValue = JSON.parse(fieldsValueString);
+        // var gr = new GlideRecord('sc_req_item');
+        // gr.addQuery('number', number);
+        // gr.query();
+        
+        // if (gr.next()) {
+        //     gr.state = 2; // Working state
+            
+        //     for (var field in fieldsValue) {
+        //         if (fieldsValue.hasOwnProperty(field)) {
+        //             gr.variables[field] = fieldsValue[field];
+        //         }
+        //     }
+            
+        //     var updateResult = gr.update();
+        //     return updateResult ? 'success' : 'Error: Failed to update record';
+        // }
+        // return 'Error: Request item not found';
+    },
+    type: 'SaveCatalogData'
+});
+    ]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-06-11 18:16:37&lt;/sys_created_on&gt;&lt;sys_id&gt;4c551582470ae25028da392f316d43ea&lt;/sys_id&gt;&lt;sys_mod_count&gt;9&lt;/sys_mod_count&gt;&lt;sys_name&gt;SaveCatalogData&lt;/sys_name&gt;&lt;sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and"&gt;2d370bf3477de61028da392f316d4377&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Edit and Resubmit"&gt;2d370bf3477de61028da392f316d4377&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_4c551582470ae25028da392f316d43ea&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-06-11 19:51:17&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-924987841</payload_hash>
+        <record_name>SaveCatalogData</record_name>
+        <reverted_from/>
+        <source>2cf3bd794706a25028da392f316d43ee</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-11 19:51:17</sys_created_on>
+        <sys_id>291be942478ae25028da392f316d4339</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197608c00b90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-11 19:51:17</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>ad1be942e08ae250b94644292ad53f38</update_guid>
+        <update_guid_history>ad1be942e08ae250b94644292ad53f38:-924987841,a6c9ed4e194ae2503253e1a74c32a4c3:-271552574,1c1961ca554ae250cb5ff9ad931dd2e7:2079254517,05fa558ad00ae25049cec857ac085e63:-676775149,9889118a7f0ae2506ba1f93107df5190:-343500744,6e795186c70ae250da110c5d4382fe37:-60411254,3ba59982bf0ae2504d73b55e1a3fcdea:228934522,3a959906c90ae2506413a2001c482c58:-934134983,18759982a40ae250d6e4d2c60ad506e4:1097928736,cb6595c2a20ae250d947653dd36fffa6:-1187744107</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 07:18:26</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>6e202efc50c24fd899340089722b5001</sys_id>
+        <sys_metadata>4c551582470ae25028da392f316d43ea</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SaveCatalogData</sys_name>
+        <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
+        <sys_scope_delete display_value="">1f498e1b31004a4bb610b897f4304a51</sys_scope_delete>
+        <sys_update_name>sys_script_include_4c551582470ae25028da392f316d43ea</sys_update_name>
+        <sys_update_version display_value="sys_script_include_4c551582470ae25028da392f316d43ea">291be942478ae25028da392f316d4339</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 07:18:26</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

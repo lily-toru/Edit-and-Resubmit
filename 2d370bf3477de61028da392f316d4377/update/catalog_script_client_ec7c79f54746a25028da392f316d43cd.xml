@@ -18,81 +18,69 @@
         <name>reSubmit</name>
         <order/>
         <published_ref/>
-        <script><![CDATA[/**
- * Handles form submission to update request item data via AJAX
- * 处理表单提交，通过AJAX更新请求项数据
- */
-function onSubmit() {
-    // Retrieve the request item number from URL parameters
-    var requestNumber = getUrlParameter('req_num'); 
-    
-    if(!requestNumber) {
-        return;
-    }
+        <script><![CDATA[function onSubmit() {
+	// Retrieve request item number from URL parameters
+	var requestNumber = getUrlParameter('req_num'); 
+	
+	// Terminate submission if request number is empty
+	if (!requestNumber) return;
+	
+	// Define array of form fields to collect
+	var questionFields = ["business_application", "request_for", "comment"];
+	var fieldCount = questionFields.length;
+	var formData = { req_num: requestNumber };
+	
+	// Loop to collect form field values
+	for (var i = 0; i < fieldCount; i++) {
+		var field = questionFields[i];
+		formData[field] = g_form.getValue(field) || '';
+	}
+	
+	// Create GlideAjax object to call server-side script
+	var ajaxProcessor = new GlideAjax("UpdateRequestItem");
+	ajaxProcessor.addParam("sysparm_name", "updateRequestItemData");
+	ajaxProcessor.addParam("sysparm_number", requestNumber);
+	ajaxProcessor.addParam("sysparm_formData", JSON.stringify(formData));
 
-    // Define all question fields to process
-    // 定义所有要处理的问题字段
-    var questionFields = ["business_application", "request_for", "comment"];
-    var formData = { req_num: requestNumber };
-
-    // Collect all question values in a loop
-    // 循环收集所有问题值
-    questionFields.forEach(function(field) {
-        formData[field] = g_form.getValue(field);
-    });
-
-    // Create new AJAX request processor
-    // 创建新的AJAX请求处理器
-    var ajaxProcessor = new GlideAjax("UpdateRequestItem");
-    ajaxProcessor.addParam("sysparm_name", "updateRequestItemData");
-    
-    // Add all parameters in a loop
-    // 循环添加所有参数
-    Object.keys(formData).forEach(function(key) {
-        ajaxProcessor.addParam(key, formData[key]);
-    });
-        
-    // Make the AJAX call
-    // 发起AJAX调用
-    ajaxProcessor.getXMLAnswer(handleSubmissionResponse); 
-    return false; // Prevent default form submission / 阻止默认表单提交
-    
-    /**
-     * Handles the response from the server after submission
-     * 处理提交后来自服务器的响应
-     * @param {string} response - The server response / 服务器响应
-     */
-    function handleSubmissionResponse(response) {
-        if(response === "true") {
-            // Redirect to index page on successful update
-            // 更新成功后重定向到索引页面
-            window.location.href = "sp?id=index";
-        } else {
-            // Handle error case here
-            // 在此处理错误情况
-            alert("Failed to update request item. Please try again.");
-        }
-    }
+	// Send asynchronous request and handle response (using anonymous callback)
+	ajaxProcessor.getXMLAnswer(function(response) {
+		
+		// Success response handling (server returns "true")
+		if (response === "true") {
+			g_form.addInfoMessage('Success! Reloading now..');
+			// Force page refresh after 2 seconds (clear beforeunload event to avoid popups)
+			setTimeout(function() {
+				top.window.onbeforeunload = null;
+				top.window.location.reload(true);
+			}, 2000);
+		}
+		// Failure response handling
+		else {
+			// Construct error message (prioritize server-provided error)
+			var errorMsg = 'Update failed: ' + (response.message || 'Unknown error');
+			g_form.addErrorMessage(errorMsg);
+			
+			// Refresh page after 3 seconds (restore page state after error)
+			setTimeout(function() {
+				top.window.onbeforeunload = null;
+				top.window.location.reload(true);
+			}, 3000);
+		}	
+		return false;
+	});
+	return false; 
 }
 
 /**
- * 从 URL 中提取指定参数的值
- * Extract the value of a specified parameter from the URL
+ * URL parameter retrieval method
  */
 function getUrlParameter(paramName) { 
-    var currentUrl = top.location; // 获取当前页面的 URL
-    // 转义参数名中的特殊字符以构建正则表达式
-    // Escape special characters in the parameter name for regex construction
-    paramName = paramName.replace(/[\[\]]/g, '\\$&'); 
-    // 构建正则表达式匹配 URL 中的参数
-    // Construct a regular expression to match the parameter in the URL
-    var parameterRegex = new RegExp('[?&]' + paramName + '=([^&#]*)|&|$'); 
-    var matchResults = parameterRegex.exec(currentUrl); // 执行正则匹配
-    if (!matchResults) return null; // 如果未匹配到结果，返回 null
-    if (!matchResults[1]) return ''; // 如果参数值为空，返回空字符串
-    // 解码 URL 参数值并返回
-    // Decode and return the URL parameter value
-    return decodeURIComponent(matchResults[1].replace(/\+/g, '')); 
+    var url = top.location; 
+    paramName = paramName.replace(/[\[\]]/g, "\\$&"); 
+    var regex = new RegExp("[?&]" + paramName + "=([^&#]*)");
+    var results = regex.exec(url);
+    if (!results || !results[1]) return '';
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -100,7 +88,7 @@ function getUrlParameter(paramName) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ec7c79f54746a25028da392f316d43cd</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>69</sys_mod_count>
         <sys_name>reSubmit</sys_name>
         <sys_overrides/>
         <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
@@ -108,7 +96,7 @@ function getUrlParameter(paramName) {
         <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
         <sys_update_name>catalog_script_client_ec7c79f54746a25028da392f316d43cd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-06-11 07:00:29</sys_updated_on>
+        <sys_updated_on>2025-06-12 08:45:26</sys_updated_on>
         <table/>
         <type>onSubmit</type>
         <ui_type>10</ui_type>

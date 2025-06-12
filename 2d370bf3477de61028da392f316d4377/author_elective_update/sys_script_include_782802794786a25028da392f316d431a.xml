@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1755799_edit_and.RegItemVarName</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>RegItemVarName</name>
+        <sandbox_callable>true</sandbox_callable>
+        <script><![CDATA[var RegItemVarName = Class.create();
+RegItemVarName.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    getRegItemVarName: function() {
+        var number = this.getParameter('sysparm_number');
+        var gr = new GlideRecord('sc_req_item');
+        if (gr.get('number', number)) {
+            var data = {};
+            var variables = gr.variables;
+            
+            for (var option in variables) {
+                if (variables.hasOwnProperty(option)) {
+                    data[option] = option;
+                }
+            }
+            return JSON.stringify(data);
+        }
+        return JSON.stringify({ error: 'Request item not found' });
+    },
+    type: 'RegItemVarName'
+});
+    ]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-11 03:21:43</sys_created_on>
+        <sys_id>782802794786a25028da392f316d431a</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>RegItemVarName</sys_name>
+        <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
+        <sys_update_name>sys_script_include_782802794786a25028da392f316d431a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-11 18:56:17</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</application>
+        <file_path/>
+        <instance_id>6ee249eeff956e10c80bf8e4fc4fd9c7</instance_id>
+        <instance_name>dev346879</instance_name>
+        <name>sys_script_include_782802794786a25028da392f316d431a</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1755799_edit_and.RegItemVarName&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;RegItemVarName&lt;/name&gt;&lt;sandbox_callable&gt;true&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var RegItemVarName = Class.create();
+RegItemVarName.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    getRegItemVarName: function() {
+        var number = this.getParameter('sysparm_number');
+        var gr = new GlideRecord('sc_req_item');
+        if (gr.get('number', number)) {
+            var data = {};
+            var variables = gr.variables;
+            
+            for (var option in variables) {
+                if (variables.hasOwnProperty(option)) {
+                    data[option] = option;
+                }
+            }
+            return JSON.stringify(data);
+        }
+        return JSON.stringify({ error: 'Request item not found' });
+    },
+    type: 'RegItemVarName'
+});
+    ]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-06-11 03:21:43&lt;/sys_created_on&gt;&lt;sys_id&gt;782802794786a25028da392f316d431a&lt;/sys_id&gt;&lt;sys_mod_count&gt;15&lt;/sys_mod_count&gt;&lt;sys_name&gt;RegItemVarName&lt;/sys_name&gt;&lt;sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and"&gt;2d370bf3477de61028da392f316d4377&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Edit and Resubmit"&gt;2d370bf3477de61028da392f316d4377&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_782802794786a25028da392f316d431a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-06-11 18:56:17&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1491144152</payload_hash>
+        <record_name>RegItemVarName</record_name>
+        <reverted_from/>
+        <source>2cf3bd794706a25028da392f316d43ee</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-11 18:56:17</sys_created_on>
+        <sys_id>377ed902474ae25028da392f316d43a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1976059a65d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-11 18:56:17</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>bb7ed902ac4ae2503fbe200a91d0c4a2</update_guid>
+        <update_guid_history>bb7ed902ac4ae2503fbe200a91d0c4a2:-1491144152,864e954e3c0ae25030066d585b4e99b3:188133051,8a3ed14e780ae250e77dff21e08fa5f0:652011986,08fa9d8a3a0ae250029195bd767ffc25:87021497,6f495186510ae250dad62ad68ac052a8:-925443130,731c4dc6ecc6e2504dae7d8dbb2e9eac:-665750308,a8ea818601c6e2500f4293e3911c029c:1173235234,d3828d868b86e2500cfc2359e12b558f:1893774640,6d8289469b86e250521efbc60f574698:464435360,1142814ae186e250bfcd9a1b70992ebc:-29435047,103205c6e186e250f2c1262bfffb2a2f:934477953,f9224d86c086e250dd54a4d08b81a247:-1394780445,3c208d460d86e250569fe61a74ec9bde:1973993783,e396963142c6a2509a836f88c0af56b5:987689545,28e802b9fb86a2505c4adb813e7aa974:783266850,5e984a793d86a250251c4767354b9aca:-1646825995</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-12 08:14:08</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>4cc43c872d5f4170bf2e4dba55c4d5c4</sys_id>
+        <sys_metadata>782802794786a25028da392f316d431a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>RegItemVarName</sys_name>
+        <sys_package display_value="Edit and Resubmit" source="x_1755799_edit_and">2d370bf3477de61028da392f316d4377</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Edit and Resubmit">2d370bf3477de61028da392f316d4377</sys_scope>
+        <sys_scope_delete display_value="">1f498e1b31004a4bb610b897f4304a51</sys_scope_delete>
+        <sys_update_name>sys_script_include_782802794786a25028da392f316d431a</sys_update_name>
+        <sys_update_version display_value="sys_script_include_782802794786a25028da392f316d431a">377ed902474ae25028da392f316d43a3</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-12 08:14:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
